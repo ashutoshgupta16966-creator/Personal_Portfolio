@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Sparkles, Code2, Database } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -7,12 +7,41 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden"
     >
-      <div className="absolute inset-0 gradient-bg opacity-50" />
-      <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-primary/8 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/3 left-1/4 w-72 h-72 bg-accent/8 rounded-full blur-3xl" />
+      {/* Background layers */}
+      <div className="absolute inset-0 gradient-bg opacity-60" />
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,hsl(var(--primary)/0.12),transparent_60%)]" />
+      <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,hsl(var(--accent)/0.10),transparent_60%)]" />
+      <div className="absolute top-1/4 right-1/3 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]" />
+      <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[80px]" />
+
+      {/* Floating skill pills */}
+      <motion.div
+        className="absolute top-32 right-10 hidden xl:flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-card/60 backdrop-blur-sm text-xs font-semibold text-primary shadow-lg"
+        initial={{ opacity: 0, x: 30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 1.0, duration: 0.6 }}
+      >
+        <Code2 size={12} /> React & TypeScript
+      </motion.div>
+      <motion.div
+        className="absolute top-52 right-14 hidden xl:flex items-center gap-2 px-4 py-2 rounded-full border border-violet-400/20 bg-card/60 backdrop-blur-sm text-xs font-semibold text-violet-400 shadow-lg"
+        initial={{ opacity: 0, x: 30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+      >
+        <Database size={12} /> Python & AI/ML
+      </motion.div>
+      <motion.div
+        className="absolute top-72 right-6 hidden xl:flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-400/20 bg-card/60 backdrop-blur-sm text-xs font-semibold text-emerald-400 shadow-lg"
+        initial={{ opacity: 0, x: 30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 1.4, duration: 0.6 }}
+      >
+        <Sparkles size={12} /> Open to Opportunities
+      </motion.div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 w-full pt-24 pb-16">
-        <div className="flex flex-col md:flex-row items-center md:items-center justify-between gap-12">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
 
           {/* Left: Text content */}
           <div className="flex-1 text-left">
@@ -21,28 +50,33 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase bg-primary/10 text-primary border border-primary/20 mb-5">
-                Open to opportunities
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-primary/10 text-primary border border-primary/25 mb-6 shadow-sm">
+                <Sparkles size={10} />
+                Open to Opportunities
               </span>
             </motion.div>
 
             <motion.h1
-              className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4"
+              className="font-display text-5xl md:text-6xl lg:text-7xl font-black leading-[1.05] mb-5"
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
             >
-              Ashutosh<br />
-              <span className="gradient-text">Gupta</span>
+              Building the{" "}
+              <span className="gradient-text">Future</span>
+              <br />
+              <span className="text-foreground/90">with Code &</span>{" "}
+              <span className="gradient-text">Data.</span>
             </motion.h1>
 
             <motion.p
-              className="text-lg md:text-xl text-muted-foreground font-light mb-3"
+              className="text-base md:text-lg text-muted-foreground font-medium mb-3 flex items-center gap-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              B.Tech CSE Student at GL Bajaj Group of Institutions, Mathura | Exploring Python, AI/ML, Data Analytics &amp; Software Development
+              <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" />
+              B.Tech CSE · GL Bajaj Group of Institutions, Mathura
             </motion.p>
 
             <motion.p
@@ -51,8 +85,28 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Turning raw data into clear decisions. I build analytical pipelines, craft insightful dashboards, and write clean Python that scales.
+              Python · AI/ML · Data Analytics · Software Development.
+              I turn raw data into decisions, build web experiences users love,
+              and write clean, scalable code that ships.
             </motion.p>
+
+            {/* Stat pills */}
+            <motion.div
+              className="flex flex-wrap gap-3 mb-8"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.35 }}
+            >
+              {[
+                { label: "4 Real Projects", color: "text-primary border-primary/20 bg-primary/5" },
+                { label: "5+ Certifications", color: "text-violet-400 border-violet-400/20 bg-violet-500/5" },
+                { label: "React · TypeScript · Vite", color: "text-emerald-400 border-emerald-400/20 bg-emerald-500/5" },
+              ].map(({ label, color }) => (
+                <span key={label} className={`px-3 py-1 rounded-full text-xs font-semibold border ${color}`}>
+                  {label}
+                </span>
+              ))}
+            </motion.div>
 
             <motion.div
               className="flex flex-wrap gap-3 mb-10"
@@ -63,14 +117,14 @@ export default function Hero() {
               <button
                 onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
                 data-testid="button-view-work"
-                className="px-7 py-3 bg-primary text-primary-foreground rounded-xl font-semibold text-sm hover:opacity-90 transition-all shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5"
+                className="px-7 py-3 bg-primary text-primary-foreground rounded-xl font-bold text-sm hover:opacity-90 transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-0.5 active:scale-95"
               >
                 View My Work
               </button>
               <button
                 onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                 data-testid="button-get-in-touch"
-                className="px-7 py-3 bg-secondary text-secondary-foreground rounded-xl font-semibold text-sm hover:bg-secondary/80 transition-all border border-border hover:-translate-y-0.5"
+                className="px-7 py-3 bg-card/80 backdrop-blur-sm text-foreground rounded-xl font-bold text-sm hover:bg-card transition-all border border-border hover:border-primary/40 hover:-translate-y-0.5 active:scale-95"
               >
                 Get in Touch
               </button>
@@ -83,9 +137,9 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.5 }}
             >
               {[
-                { icon: Github, label: "GitHub", href: "https://github.com" },
-                { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
-                { icon: Mail, label: "Email", href: "mailto:ashutosh@example.com" },
+                { icon: Github, label: "GitHub", href: "https://github.com/AshutoshBuilds" },
+                { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/ashutosh-gupta-9a8b07347" },
+                { icon: Mail, label: "Email", href: "mailto:ashutoshgupta16966@gmail.com" },
               ].map(({ icon: Icon, label, href }) => (
                 <a
                   key={label}
@@ -93,18 +147,18 @@ export default function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid={`link-social-${label.toLowerCase()}`}
-                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors group"
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-all group"
                 >
-                  <span className="w-9 h-9 rounded-lg bg-secondary border border-border flex items-center justify-center group-hover:border-primary/40 group-hover:bg-primary/5 transition-all">
+                  <span className="w-9 h-9 rounded-xl bg-card border border-border flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/8 group-hover:shadow-md group-hover:shadow-primary/10 transition-all">
                     <Icon size={15} />
                   </span>
-                  <span className="hidden sm:block">{label}</span>
+                  <span className="hidden sm:block font-medium">{label}</span>
                 </a>
               ))}
             </motion.div>
           </div>
 
-          {/* Right: Avatar */}
+          {/* Right: Avatar + glassmorphism card */}
           <motion.div
             className="shrink-0 flex flex-col items-center gap-6"
             initial={{ opacity: 0, scale: 0.85 }}
@@ -112,36 +166,37 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           >
             <div className="relative">
-              <div className="w-48 h-48 md:w-60 md:h-60 rounded-full shadow-2xl shadow-primary/25 overflow-hidden border-4 border-primary/20">
+              {/* Glow ring */}
+              <div className="absolute -inset-1.5 rounded-full bg-gradient-to-br from-primary via-accent to-violet-500 opacity-30 blur-md" />
+              <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full shadow-2xl shadow-primary/30 overflow-hidden border-4 border-primary/30">
                 <img
                   src="/assets/profile.jpeg"
                   alt="Ashutosh Gupta"
                   className="w-full h-full object-cover object-top"
                 />
               </div>
-              <span className="absolute bottom-3 right-3 w-5 h-5 rounded-full bg-emerald-500 border-2 border-background" title="Available" />
+              <span className="absolute bottom-4 right-4 w-5 h-5 rounded-full bg-emerald-500 border-2 border-background shadow-lg" title="Available" />
             </div>
 
-            <div className="flex gap-4 text-center">
-              <div className="px-4 py-2 rounded-xl border border-border bg-card">
-                <div className="text-sm font-bold leading-tight">B.Tech</div>
-                <div className="text-xs text-muted-foreground">CSE Student</div>
-              </div>
-              <div className="px-4 py-2 rounded-xl border border-border bg-card">
-                <div className="text-xl font-bold">4</div>
-                <div className="text-xs text-muted-foreground">Real Projects</div>
-              </div>
-              <div className="px-4 py-2 rounded-xl border border-border bg-card">
-                <div className="text-xl font-bold">5+</div>
-                <div className="text-xs text-muted-foreground">Certifications</div>
-              </div>
+            {/* Glassmorphism stats card */}
+            <div className="flex gap-3 text-center">
+              {[
+                { val: "B.Tech", sub: "CSE '29", color: "text-primary" },
+                { val: "4", sub: "Projects", color: "text-violet-400" },
+                { val: "5+", sub: "Certs", color: "text-emerald-400" },
+              ].map(({ val, sub, color }) => (
+                <div key={sub} className="px-4 py-3 rounded-2xl border border-border/60 bg-card/60 backdrop-blur-md hover:border-primary/30 hover:bg-card/80 transition-all">
+                  <div className={`text-lg font-black leading-tight ${color}`}>{val}</div>
+                  <div className="text-xs text-muted-foreground font-medium mt-0.5">{sub}</div>
+                </div>
+              ))}
             </div>
           </motion.div>
         </div>
 
         <motion.button
           onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-foreground transition-colors"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors"
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           data-testid="button-scroll-down"
