@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Github, ExternalLink, ArrowUpRight, X, ChevronRight, Gamepad2, BarChart3, Globe, Layout } from "lucide-react";
+import { Github, ArrowUpRight, X, ChevronRight, Gamepad2, BarChart3, Globe, HelpCircle } from "lucide-react";
 
 interface Project {
   id: string;
@@ -14,7 +14,6 @@ interface Project {
   accentBorder: string;
   accentIcon: string;
   githubUrl: string;
-  liveUrl?: string;
   status: string;
   icon: React.ElementType;
   features: string[];
@@ -25,129 +24,117 @@ const projects: Project[] = [
   {
     id: "rajachess",
     title: "RajaChess — Multiplayer Chess",
-    tagline: "2P · 3P · 4P on one board",
+    tagline: "Framework-Free 2P, 3P & 4P Chess Engine",
     description:
       "A feature-packed, gamified web chess app supporting 2-Player, 3-Player, and 4-Player variants on a single board.",
     longDescription:
-      "RajaChess is a fully framework-free browser chess game built with pure HTML5, CSS3, and ES6+ JavaScript. It supports classic 2-player chess, an experimental 3-player and 4-player mode, all powered by a custom Smart Multi-King AI engine with 3 difficulty levels and anti-loop resolution. The virtual economy system \"Shahi Khazana\" tracks wins, coins, and trophies in localStorage. Sound is synthesized in real-time using the Web Audio API — no audio files needed.",
+      "RajaChess is a framework-free browser chess game built with HTML5, CSS3, and JavaScript (ES6+). It features 2-player, 3-player, and 4-player chess variants on an adaptive board, powered by a custom Smart Multi-King AI engine across 3 difficulty levels with anti-loop resolution. Includes a \"Shahi Khazana\" virtual economy (localStorage) and real-time Web Audio API sound synthesis.",
     tags: ["HTML5", "CSS3", "JavaScript (ES6+)", "Web Audio API", "Smart AI", "LocalStorage"],
     accent: "from-amber-500/20 to-yellow-500/10",
     accentBorder: "border-amber-400/25",
     accentIcon: "text-amber-400",
-    githubUrl: "https://github.com/AshutoshBuilds/RajaChess",
-    liveUrl: "https://rajachess.vercel.app",
+    githubUrl: "https://github.com/ashutoshgupta16966-creator/Multiplayer-Chess",
     status: "Game Dev / Web App",
     icon: Gamepad2,
     features: [
       "2P, 3P, 4P chess on a single adaptive board",
-      "Smart Multi-King AI — Easy, Medium, Hard with anti-loop logic",
-      "\"Shahi Khazana\" economy: coins, trophies, streaks (localStorage)",
-      "Real-time Web Audio API sound synthesis — zero audio files",
-      "Move history, check/checkmate detection, turn indicators",
-      "Fully responsive — desktop & mobile",
-      "100% framework-free (no React, no Vue, no jQuery)",
+      "Smart Multi-King AI engine (Easy, Medium, Hard with anti-loop resolution)",
+      "\"Shahi Khazana\" virtual economy (coins, trophies, streaks in localStorage)",
+      "Pure JS Web Audio API sound synthesis — 0 external audio files",
+      "Move history, turn indicators, and check/checkmate detection",
+      "100% framework-free Vanilla JS architecture",
     ],
     structure: [
-      { path: "index.html", desc: "Main entry point" },
-      { path: "style.css", desc: "Full board & UI styling" },
-      { path: "chess.js", desc: "Core game logic, move validation, AI engine" },
-      { path: "economy.js", desc: "Shahi Khazana virtual economy system" },
-      { path: "audio.js", desc: "Web Audio API sound synthesis" },
-    ],
-  },
-  {
-    id: "eda-tool",
-    title: "Exploratory Data Analysis Tool",
-    tagline: "IPL cricket tournament insights",
-    description:
-      "A comprehensive EDA pipeline in Google Colab to analyze IPL datasets with rich visualizations.",
-    longDescription:
-      "Built a full exploratory data analysis pipeline using Python and Google Colab to analyze Indian Premier League (IPL) cricket datasets. The project involved data cleaning, handling missing values, feature engineering, and generating over 15 impactful visualizations to uncover tournament trends, team performance patterns, and player statistics.",
-    tags: ["Python", "Google Colab", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
-    accent: "from-blue-500/20 to-sky-500/10",
-    accentBorder: "border-blue-400/25",
-    accentIcon: "text-blue-400",
-    githubUrl: "https://github.com/AshutoshBuilds",
-    status: "EDA Project",
-    icon: BarChart3,
-    features: [
-      "Full data cleaning pipeline with missing value handling",
-      "Team-wise win rate analysis across IPL seasons",
-      "Player performance heatmaps and scatter plots",
-      "Venue-wise match outcome analysis",
-      "Toss decision impact visualization",
-      "15+ publication-ready charts (Matplotlib + Seaborn)",
-    ],
-    structure: [
-      { path: "IPL_EDA.ipynb", desc: "Main analysis notebook" },
-      { path: "data/matches.csv", desc: "Match-level IPL dataset" },
-      { path: "data/deliveries.csv", desc: "Ball-by-ball delivery data" },
-      { path: "outputs/", desc: "Exported charts & figures" },
+      { path: "index.html", desc: "Main entry point and adaptive board layout" },
+      { path: "style.css", desc: "Custom theme & piece styling" },
+      { path: "chess.js", desc: "Core game engine, move validation, AI logic" },
+      { path: "economy.js", desc: "Shahi Khazana virtual economy module" },
+      { path: "audio.js", desc: "Web Audio API sound generator" },
     ],
   },
   {
     id: "smart-bharat",
     title: "Smart Bharat — Civic Companion",
-    tagline: "AI-powered civic issue dashboard",
+    tagline: "AI-Powered Civic Issue Tracker & Assistant",
     description:
-      "Civic Dashboard web app with AI Companion, civic issue tracker, and document assistant.",
+      "A civic-tech web application featuring an AI Companion, real-time civic issue tracker, and document assistant.",
     longDescription:
-      "Smart Bharat is a civic-tech web application designed to simplify the process of tracking and reviewing public complaints. It features an AI Companion chatbot for guidance, a real-time civic issue tracker with status updates, and a document assistant for reviewing government-issued documents. Deployed on Vercel with a clean, accessible UI.",
-    tags: ["React", "TypeScript", "Vite", "AI Integration", "Vercel", "Tailwind CSS"],
+      "Smart Bharat is a civic-tech application designed to simplify reporting and reviewing public complaints. It features an AI Companion chatbot for user assistance, an issue tracking dashboard for real-time complaint status updates, and a document review assistant for municipal guidelines.",
+    tags: ["React", "TypeScript", "Vite", "AI Integration", "Tailwind CSS"],
     accent: "from-emerald-500/20 to-teal-500/10",
     accentBorder: "border-emerald-400/25",
     accentIcon: "text-emerald-400",
-    githubUrl: "https://github.com/AshutoshBuilds/SmartBharat",
-    liveUrl: "https://smart-bharat.vercel.app",
-    status: "Live App",
+    githubUrl: "https://github.com/ashutoshgupta16966-creator/Smart_Bharat---Civic-Companion",
+    status: "Civic Tech / Web App",
     icon: Globe,
     features: [
-      "AI Companion chatbot for civic guidance",
-      "Real-time civic complaint tracker with status",
-      "Document review assistant for government forms",
-      "Interactive dashboard with filterable issue cards",
-      "Responsive design optimized for all devices",
-      "Deployed and live on Vercel",
+      "AI Companion chatbot for civic issue reporting guidance",
+      "Real-time issue status tracker with status badges",
+      "Document review assistant for municipal guidelines",
+      "Interactive dashboard layout with filterable complaint cards",
+      "Built with React, TypeScript, Vite, and Tailwind CSS",
     ],
     structure: [
-      { path: "src/App.tsx", desc: "Root application component" },
-      { path: "src/components/", desc: "Reusable UI components" },
-      { path: "src/sections/", desc: "Page section components" },
-      { path: "src/lib/ai.ts", desc: "AI companion integration" },
-      { path: "vercel.json", desc: "Deployment configuration" },
+      { path: "src/App.tsx", desc: "Root application shell" },
+      { path: "src/components/", desc: "Dashboard UI components" },
+      { path: "src/sections/", desc: "Feature section views" },
+      { path: "src/lib/ai.ts", desc: "AI assistant integration module" },
     ],
   },
   {
-    id: "portfolio",
-    title: "Personal Portfolio Website",
-    tagline: "The site you're currently viewing",
+    id: "quizfunnel",
+    title: "QuizFunnel — Interactive Assessment Engine",
+    tagline: "Dynamic Multi-Step Quiz & Analytics Platform",
     description:
-      "Professional portfolio built with React, TypeScript, Vite, Tailwind CSS, and Framer Motion.",
+      "An interactive assessment platform featuring multi-step question branching, state management, and lead analytics.",
     longDescription:
-      "This portfolio was built from scratch with a focus on performance, aesthetics, and developer experience. It uses React 18 + TypeScript with Vite for blazing fast builds, Tailwind CSS v4 for utility-first styling, and Framer Motion for silky smooth animations. Dark mode is supported via class-based theming, and the site scores 95+ on Lighthouse.",
-    tags: ["React 18", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion", "Vercel"],
+      "QuizFunnel is an interactive assessment web application designed for lead capture and dynamic user evaluation. It supports conditional question pathways, instant scoring calculations, local state persistence, and clean response visual breakdowns.",
+    tags: ["JavaScript (ES6+)", "HTML5", "CSS3", "State Management", "Analytics"],
     accent: "from-violet-500/20 to-purple-500/10",
     accentBorder: "border-violet-400/25",
     accentIcon: "text-violet-400",
-    githubUrl: "https://github.com/AshutoshBuilds/Portfolio",
-    liveUrl: "https://ashutosh-portfolio.vercel.app",
-    status: "Deployed",
-    icon: Layout,
+    githubUrl: "https://github.com/ashutoshgupta16966-creator/QuizFunnel",
+    status: "Web Application",
+    icon: HelpCircle,
     features: [
-      "React 18 + TypeScript with strict mode",
-      "Vite build tool for sub-second HMR",
-      "Tailwind CSS v4 with custom dark theme",
-      "Framer Motion animations throughout",
-      "Glassmorphism UI panels and gradient accents",
-      "SPA routing with Vercel rewrites",
-      "Project detail modals with isolated views",
+      "Dynamic multi-step question branching engine",
+      "Conditional score & result calculation logic",
+      "Local state persistence across sessions",
+      "Clean, conversion-focused UI with immediate feedback",
+      "Fully responsive layout across mobile and desktop",
     ],
     structure: [
-      { path: "src/sections/", desc: "Hero, About, Skills, Projects, Certs, Contact" },
-      { path: "src/components/", desc: "Navbar, ErrorBoundary, UI kit" },
-      { path: "src/main.tsx", desc: "App entry with ErrorBoundary" },
-      { path: "vite.config.ts", desc: "Vite + Tailwind + path aliases" },
-      { path: "vercel.json", desc: "SPA rewrite rules" },
+      { path: "index.html", desc: "Assessment entry interface" },
+      { path: "src/app.js", desc: "Quiz engine logic & state flow" },
+      { path: "src/style.css", desc: "Custom styling and card layout" },
+    ],
+  },
+  {
+    id: "eda-tool",
+    title: "Exploratory Data Analysis Tool",
+    tagline: "Data Cleaning, Feature Engineering & Visualization Pipeline",
+    description:
+      "A comprehensive Python and Google Colab EDA pipeline for structured dataset processing and statistical chart generation.",
+    longDescription:
+      "A data science project delivering an end-to-end exploratory data analysis pipeline built in Python and Google Colab. Covers automated data cleaning, missing value imputations, feature engineering, and statistical chart generation to uncover meaningful insights.",
+    tags: ["Python", "Google Colab", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
+    accent: "from-blue-500/20 to-sky-500/10",
+    accentBorder: "border-blue-400/25",
+    accentIcon: "text-blue-400",
+    githubUrl: "https://github.com/ashutoshgupta16966-creator/Personal_Portfolio",
+    status: "Data Science / EDA",
+    icon: BarChart3,
+    features: [
+      "Automated data cleaning & missing value handling",
+      "Feature engineering & statistical data aggregation",
+      "Distribution heatmaps, scatter plots, and trend charts",
+      "Modular Python script / Jupyter notebook design",
+      "Exportable charts and data summary tables",
+    ],
+    structure: [
+      { path: "EDA_Notebook.ipynb", desc: "Main Jupyter analysis notebook" },
+      { path: "data/", desc: "Raw and processed datasets" },
+      { path: "outputs/", desc: "Generated charts and statistical outputs" },
     ],
   },
 ];
@@ -257,26 +244,15 @@ function ProjectModal({ project, onClose }: ProjectModalProps) {
               </div>
             )}
 
-            {/* Action buttons */}
-            <div className="flex flex-wrap gap-3">
-              {project.liveUrl && (
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold bg-primary text-primary-foreground hover:opacity-90 transition-all shadow-md shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-0.5"
-                >
-                  <ExternalLink size={14} />
-                  Live Preview
-                </a>
-              )}
+            {/* Action button: Source Code ONLY */}
+            <div className="flex flex-wrap gap-3 pt-2">
               <a
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold bg-secondary text-secondary-foreground border border-border hover:bg-secondary/80 hover:border-primary/30 transition-all hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold bg-primary text-primary-foreground hover:opacity-90 transition-all shadow-md shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-0.5"
               >
-                <Github size={14} />
+                <Github size={16} />
                 Source Code
               </a>
             </div>
@@ -314,7 +290,7 @@ export default function Projects() {
             Things I've Built
           </h2>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-            Real projects — chess engines, data pipelines, AI dashboards, and deployed web apps. Click any card to explore details.
+            Real projects — chess engines, civic platforms, assessment engines, and data analytics tools. Click any card to explore code structure.
           </p>
         </motion.div>
 
@@ -332,51 +308,55 @@ export default function Projects() {
                 className={`group relative rounded-2xl border ${project.accentBorder} bg-card overflow-hidden hover:shadow-xl hover:shadow-black/10 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer`}
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-50`} />
-                <div className="relative p-7">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className={`w-10 h-10 rounded-xl border border-border/60 bg-background/60 flex items-center justify-center`}>
-                        <Icon size={18} className={project.accentIcon} />
+                <div className="relative p-7 flex flex-col h-full justify-between">
+                  <div>
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className={`w-10 h-10 rounded-xl border border-border/60 bg-background/60 flex items-center justify-center`}>
+                          <Icon size={18} className={project.accentIcon} />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-black leading-tight">{project.title}</h3>
+                          <p className="text-xs text-muted-foreground mt-0.5">{project.tagline}</p>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="text-lg font-black leading-tight">{project.title}</h3>
-                        <p className="text-xs text-muted-foreground mt-0.5">{project.tagline}</p>
-                      </div>
+                      <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-background border border-border text-muted-foreground shrink-0 ml-2">
+                        {project.status}
+                      </span>
                     </div>
-                    <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-background border border-border text-muted-foreground shrink-0 ml-2">
-                      {project.status}
-                    </span>
-                  </div>
 
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-5">{project.description}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-5">{project.description}</p>
 
-                  <div className="flex flex-wrap gap-1.5 mb-6">
-                    {project.tags.slice(0, 4).map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs px-2.5 py-1 rounded-md bg-background/80 border border-border/80"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                    {project.tags.length > 4 && (
-                      <span className="text-xs px-2.5 py-1 rounded-md bg-background/80 border border-border/80 text-muted-foreground">
-                        +{project.tags.length - 4} more
-                      </span>
-                    )}
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      {project.liveUrl && (
-                        <span className="flex items-center gap-1 text-xs text-emerald-400 font-semibold">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                          Live
+                    <div className="flex flex-wrap gap-1.5 mb-6">
+                      {project.tags.slice(0, 4).map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-xs px-2.5 py-1 rounded-md bg-background/80 border border-border/80"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                      {project.tags.length > 4 && (
+                        <span className="text-xs px-2.5 py-1 rounded-md bg-background/80 border border-border/80 text-muted-foreground">
+                          +{project.tags.length - 4} more
                         </span>
                       )}
                     </div>
-                    <span className="flex items-center gap-1 text-xs text-muted-foreground group-hover:text-primary transition-colors font-semibold">
-                      View Details
+                  </div>
+
+                  <div className="flex items-center justify-between pt-2 border-t border-border/40">
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:underline"
+                    >
+                      <Github size={14} />
+                      Source Code
+                    </a>
+                    <span className="flex items-center gap-1 text-xs text-muted-foreground group-hover:text-foreground transition-colors font-medium">
+                      Code Breakdown &amp; Details
                       <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </span>
                   </div>

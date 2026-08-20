@@ -54,8 +54,8 @@ export default function Contact() {
 
             {[
               { icon: Mail, label: "Email", value: "ashutoshgupta16966@gmail.com", href: "mailto:ashutoshgupta16966@gmail.com" },
-              { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/ashutoshgupta", href: "https://linkedin.com" },
-              { icon: Github, label: "GitHub", value: "@ashutosh-gupta", href: "https://github.com" },
+              { icon: Linkedin, label: "LinkedIn", value: "ashutosh-gupta", href: "https://linkedin.com/in/ashutosh-gupta-9a8b07347" },
+              { icon: Github, label: "GitHub", value: "@ashutoshgupta16966-creator", href: "https://github.com/ashutoshgupta16966-creator" },
             ].map(({ icon: Icon, label, value, href }) => (
               <a
                 key={label}
