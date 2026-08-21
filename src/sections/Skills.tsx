@@ -1,115 +1,94 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Brain, BarChart3, Globe, Wrench, Code2 } from "lucide-react";
+import { BarChart3, Globe, Wrench, Code2 } from "lucide-react";
 import {
   SiPython,
-  SiTensorflow,
-  SiScikitlearn,
-  SiPytorch,
+  SiC,
   SiPandas,
   SiNumpy,
-  SiPlotly,
-  SiMysql,
-  SiReact,
-  SiFastapi,
-  SiFlask,
   SiHtml5,
-  SiGit,
-  SiDocker,
-  SiJupyter,
-  SiKaggle,
-  SiTypescript,
-  SiVite,
-  SiTailwindcss,
+  SiCss,
   SiJavascript,
+  SiReact,
+  SiTailwindcss,
+  SiGit,
+  SiGithub,
+  SiGooglecolab,
 } from "react-icons/si";
 
 const categories = [
   {
-    id: "web-dev",
-    label: "Web Dev",
-    icon: Globe,
-    accent: "from-blue-500/15 to-cyan-500/5",
+    id: "programming",
+    label: "Programming & Core",
+    icon: Code2,
+    accent: "from-blue-500/15 to-indigo-500/5",
     border: "border-blue-400/25",
     iconColor: "text-blue-400",
     badgeBg: "bg-blue-500/10 text-blue-400",
-    featured: true,
     skills: [
-      { name: "React 18", icon: SiReact, color: "#61DAFB", hot: true },
-      { name: "TypeScript", icon: SiTypescript, color: "#3178C6", hot: true },
-      { name: "Vite", icon: SiVite, color: "#646CFF", hot: true },
-      { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-      { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
-      { name: "HTML / CSS", icon: SiHtml5, color: "#E34F26" },
-      { name: "FastAPI", icon: SiFastapi, color: "#009688" },
-      { name: "Flask", icon: SiFlask, color: "#aaaaaa" },
+      { name: "Python", icon: SiPython, color: "#3776AB" },
+      { name: "C", icon: SiC, color: "#A8B9CC" },
     ],
   },
   {
-    id: "ai-ml",
-    label: "AI & ML",
-    icon: Brain,
-    accent: "from-violet-500/15 to-purple-500/5",
-    border: "border-violet-400/25",
-    iconColor: "text-violet-400",
-    badgeBg: "bg-violet-500/10 text-violet-400",
-    featured: false,
-    skills: [
-      { name: "Python", icon: SiPython, color: "#3776AB", hot: true },
-      { name: "TensorFlow", icon: SiTensorflow, color: "#FF6F00" },
-      { name: "PyTorch", icon: SiPytorch, color: "#EE4C2C" },
-      { name: "Scikit-learn", icon: SiScikitlearn, color: "#F7931E" },
-    ],
-  },
-  {
-    id: "data-science",
-    label: "Data Science",
+    id: "data-analytics",
+    label: "Data Analytics",
     icon: BarChart3,
     accent: "from-emerald-500/15 to-teal-500/5",
     border: "border-emerald-400/25",
     iconColor: "text-emerald-400",
     badgeBg: "bg-emerald-500/10 text-emerald-400",
-    featured: false,
     skills: [
       { name: "Pandas", icon: SiPandas, color: "#150458" },
       { name: "NumPy", icon: SiNumpy, color: "#4DABCF" },
-      { name: "Plotly", icon: SiPlotly, color: "#636EFA" },
-      { name: "SQL / MySQL", icon: SiMysql, color: "#4479A1" },
+      { name: "Matplotlib", icon: BarChart3, color: "#11557C" },
     ],
   },
   {
-    id: "tools",
+    id: "web-basics",
+    label: "Web Basics",
+    icon: Globe,
+    accent: "from-cyan-500/15 to-sky-500/5",
+    border: "border-cyan-400/25",
+    iconColor: "text-cyan-400",
+    badgeBg: "bg-cyan-500/10 text-cyan-400",
+    skills: [
+      { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
+      { name: "CSS3", icon: SiCss, color: "#1572B6" },
+      { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+      { name: "React", icon: SiReact, color: "#61DAFB" },
+      { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+    ],
+  },
+  {
+    id: "dev-tools",
     label: "Dev Tools",
     icon: Wrench,
     accent: "from-orange-500/15 to-amber-500/5",
     border: "border-orange-400/25",
     iconColor: "text-orange-400",
     badgeBg: "bg-orange-500/10 text-orange-400",
-    featured: false,
     skills: [
-      { name: "Git", icon: SiGit, color: "#F05032", hot: true },
-      { name: "Docker", icon: SiDocker, color: "#2496ED" },
-      { name: "Jupyter", icon: SiJupyter, color: "#F37626" },
-      { name: "Kaggle", icon: SiKaggle, color: "#20BEFF" },
+      { name: "Git", icon: SiGit, color: "#F05032" },
+      { name: "GitHub", icon: SiGithub, color: "#ffffff" },
+      { name: "VS Code", icon: Code2, color: "#007ACC" },
+      { name: "Google Colab", icon: SiGooglecolab, color: "#F9AB00" },
     ],
   },
 ];
 
-// Flat skill bar data
+// Flat skill bar data - EXACT 3 items requested
 const topSkills = [
-  { name: "Python", level: 88, color: "bg-blue-500" },
-  { name: "React / TypeScript", level: 82, color: "bg-cyan-500" },
-  { name: "JavaScript (ES6+)", level: 85, color: "bg-yellow-400" },
-  { name: "Vite / Build Tools", level: 75, color: "bg-violet-500" },
-  { name: "Pandas / NumPy", level: 80, color: "bg-emerald-500" },
-  { name: "Git / GitHub", level: 83, color: "bg-orange-500" },
+  { name: "Git / GitHub", level: 80, color: "bg-orange-500" },
+  { name: "Python", level: 70, color: "bg-blue-500" },
+  { name: "HTML & CSS", level: 65, color: "bg-emerald-500" },
 ];
 
 export default function Skills() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-  const [activeTab, setActiveTab] = useState("web-dev");
+  const [activeTab, setActiveTab] = useState("programming");
 
   const active = categories.find((c) => c.id === activeTab) ?? categories[0];
 
@@ -129,14 +108,14 @@ export default function Skills() {
             What I Work With
           </h2>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-            A modern toolkit spanning full-stack web dev, AI/ML, data science, and developer tooling.
+            A clean, focused technical toolkit built around Python, Data Analytics, Web Development, and Developer Tools.
           </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-8 mb-12">
           {/* Left: Proficiency bars */}
           <motion.div
-            className="lg:col-span-2 space-y-4"
+            className="lg:col-span-2 space-y-5"
             initial={{ opacity: 0, x: -24 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.15 }}
@@ -149,9 +128,9 @@ export default function Skills() {
               <div key={name}>
                 <div className="flex items-center justify-between mb-1.5">
                   <span className="text-xs font-semibold text-foreground">{name}</span>
-                  <span className="text-xs text-muted-foreground">{level}%</span>
+                  <span className="text-xs text-muted-foreground font-bold">{level}%</span>
                 </div>
-                <div className="h-2 rounded-full bg-secondary overflow-hidden">
+                <div className="h-2.5 rounded-full bg-secondary overflow-hidden">
                   <motion.div
                     className={`h-full rounded-full ${color}`}
                     initial={{ width: 0 }}
@@ -194,26 +173,21 @@ export default function Skills() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.25 }}
-              className={`rounded-2xl border ${active.border} bg-gradient-to-br ${active.accent} p-5`}
+              className={`rounded-2xl border ${active.border} bg-gradient-to-br ${active.accent} p-6 min-h-[160px] flex items-center`}
             >
-              <div className="grid grid-cols-4 gap-3">
-                {active.skills.map(({ name, icon: SkillIcon, color, hot }: { name: string; icon: React.ElementType; color: string; hot?: boolean }) => (
+              <div className="grid grid-cols-3 sm:grid-cols-5 gap-4 w-full">
+                {active.skills.map(({ name, icon: SkillIcon, color }) => (
                   <div
                     key={name}
                     data-testid={`skill-item-${name.toLowerCase().replace(/[\s/]+/g, "-")}`}
-                    className="flex flex-col items-center gap-2 p-3 rounded-xl bg-background/70 border border-border/60 hover:border-primary/40 hover:bg-background hover:shadow-md transition-all cursor-default group relative"
+                    className="flex flex-col items-center gap-2 p-3 rounded-xl bg-background/70 border border-border/60 hover:border-primary/40 hover:bg-background hover:shadow-md transition-all cursor-default group"
                   >
-                    {hot && (
-                      <span className="absolute -top-1 -right-1 text-[9px] font-black bg-primary text-primary-foreground rounded-full px-1 leading-4">
-                        ✦
-                      </span>
-                    )}
                     <SkillIcon
-                      size={24}
+                      size={26}
                       style={{ color }}
                       className="group-hover:scale-110 transition-transform duration-200"
                     />
-                    <span className="text-[10px] font-semibold text-center leading-tight text-muted-foreground group-hover:text-foreground transition-colors">
+                    <span className="text-[11px] font-semibold text-center leading-tight text-muted-foreground group-hover:text-foreground transition-colors">
                       {name}
                     </span>
                   </div>
@@ -240,8 +214,8 @@ export default function Skills() {
                   {label}
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-2.5">
-                {skills.slice(0, 4).map(({ name, icon: SkillIcon, color }: { name: string; icon: React.ElementType; color: string }) => (
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                {skills.map(({ name, icon: SkillIcon, color }) => (
                   <div
                     key={name}
                     className="flex flex-col items-center gap-1.5 p-2.5 rounded-xl bg-background/70 border border-border/60 hover:border-primary/30 transition-all cursor-default group"

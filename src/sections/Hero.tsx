@@ -21,7 +21,7 @@ export default function Hero() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1.0, duration: 0.6 }}
       >
-        <Code2 size={12} /> React &amp; TypeScript
+        <Code2 size={12} /> React &amp; Web Basics
       </motion.div>
       <motion.div
         className="absolute top-52 right-14 hidden xl:flex items-center gap-2 px-4 py-2 rounded-full border border-violet-400/20 bg-card/60 backdrop-blur-sm text-xs font-semibold text-violet-400 shadow-lg"
@@ -29,7 +29,7 @@ export default function Hero() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1.2, duration: 0.6 }}
       >
-        <Database size={12} /> Python &amp; AI/ML
+        <Database size={12} /> Python &amp; Data Analytics
       </motion.div>
       <motion.div
         className="absolute top-72 right-6 hidden xl:flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-400/20 bg-card/60 backdrop-blur-sm text-xs font-semibold text-emerald-400 shadow-lg"
@@ -70,22 +70,12 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p
-              className="text-base md:text-lg text-foreground/90 font-semibold mb-2 max-w-xl leading-relaxed flex items-center gap-2"
+              className="text-base md:text-lg text-foreground/90 font-semibold mb-6 max-w-xl leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block shrink-0" />
-              B.Tech CSE • GL Bajaj Group of Institutions, Mathura
-            </motion.p>
-
-            <motion.p
-              className="text-sm md:text-base text-muted-foreground max-w-xl mb-8 leading-relaxed font-medium"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.25 }}
-            >
-              Python • AI/ML • Data Analytics • Software Development. I turn raw data into decisions, build web experiences users love, and write clean, scalable code that ships.
+              B.Tech CSE Student at GL Bajaj Group of Institutions, Mathura | Python | Exploring AI/ML, Data Analytics &amp; Software Development
             </motion.p>
 
             {/* Stat pills */}
@@ -96,9 +86,9 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.35 }}
             >
               {[
-                { label: "4 Real Projects", color: "text-primary border-primary/20 bg-primary/5" },
+                { label: "3+ Projects", color: "text-primary border-primary/20 bg-primary/5" },
                 { label: "5+ Certifications", color: "text-violet-400 border-violet-400/20 bg-violet-500/5" },
-                { label: "React · TypeScript · Python", color: "text-emerald-400 border-emerald-400/20 bg-emerald-500/5" },
+                { label: "Python · React · Git", color: "text-emerald-400 border-emerald-400/20 bg-emerald-500/5" },
               ].map(({ label, color }) => (
                 <span key={label} className={`px-3 py-1 rounded-full text-xs font-semibold border ${color}`}>
                   {label}
@@ -180,7 +170,7 @@ export default function Hero() {
             <div className="flex gap-3 text-center">
               {[
                 { val: "B.Tech", sub: "CSE '29", color: "text-primary" },
-                { val: "4", sub: "Projects", color: "text-violet-400" },
+                { val: "3+", sub: "Projects", color: "text-violet-400" },
                 { val: "5+", sub: "Certs", color: "text-emerald-400" },
               ].map(({ val, sub, color }) => (
                 <div key={sub} className="px-4 py-3 rounded-2xl border border-border/60 bg-card/60 backdrop-blur-md hover:border-primary/30 hover:bg-card/80 transition-all">
