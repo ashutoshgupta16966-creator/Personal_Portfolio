@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Github, ArrowUpRight, X, ChevronRight, Gamepad2, BarChart3, Globe, HelpCircle } from "lucide-react";
+import { Github, ArrowUpRight, X, ChevronRight, Gamepad2, BarChart3, Globe, Layout } from "lucide-react";
 
 interface Project {
   id: string;
@@ -33,7 +33,7 @@ const projects: Project[] = [
     accent: "from-amber-500/20 to-yellow-500/10",
     accentBorder: "border-amber-400/25",
     accentIcon: "text-amber-400",
-    githubUrl: "https://github.com/ashutoshgupta16966-creator/Multiplayer-Chess",
+    githubUrl: "https://github.com/ashutoshgupta16966-creator/Multiplayer_Chess",
     status: "Game Dev / Web App",
     icon: Gamepad2,
     features: [
@@ -82,31 +82,32 @@ const projects: Project[] = [
     ],
   },
   {
-    id: "quizfunnel",
-    title: "QuizFunnel — Interactive Assessment Engine",
-    tagline: "Dynamic Multi-Step Quiz & Analytics Platform",
+    id: "portfolio",
+    title: "Personal Portfolio Website",
+    tagline: "Modern Developer Portfolio Built with React & Tailwind",
     description:
-      "An interactive assessment platform featuring multi-step question branching, state management, and lead analytics.",
+      "Modern developer portfolio built with React, TypeScript, and Tailwind CSS featuring interactive project showcases, clean UI/UX, and responsive layout.",
     longDescription:
-      "QuizFunnel is an interactive assessment web application designed for lead capture and dynamic user evaluation. It supports conditional question pathways, instant scoring calculations, local state persistence, and clean response visual breakdowns.",
-    tags: ["JavaScript (ES6+)", "HTML5", "CSS3", "State Management", "Analytics"],
+      "A developer portfolio built from scratch to showcase real engineering projects, academic background, and technical skill sets. Features an interactive project modal viewer, glassmorphism aesthetics, responsive dark mode support, and clean TypeScript codebase.",
+    tags: ["React 18", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
     accent: "from-violet-500/20 to-purple-500/10",
     accentBorder: "border-violet-400/25",
     accentIcon: "text-violet-400",
-    githubUrl: "https://github.com/ashutoshgupta16966-creator/QuizFunnel",
-    status: "Web Application",
-    icon: HelpCircle,
+    githubUrl: "https://github.com/ashutoshgupta16966-creator/Personal_Portfolio",
+    status: "Web Development / React",
+    icon: Layout,
     features: [
-      "Dynamic multi-step question branching engine",
-      "Conditional score & result calculation logic",
-      "Local state persistence across sessions",
-      "Clean, conversion-focused UI with immediate feedback",
-      "Fully responsive layout across mobile and desktop",
+      "React 18 + TypeScript strict build architecture",
+      "Glassmorphism dark theme with Framer Motion animations",
+      "Interactive project modal viewer with isolated code breakdown",
+      "Responsive design optimized across mobile and desktop viewports",
+      "Clean project repository integration",
     ],
     structure: [
-      { path: "index.html", desc: "Assessment entry interface" },
-      { path: "src/app.js", desc: "Quiz engine logic & state flow" },
-      { path: "src/style.css", desc: "Custom styling and card layout" },
+      { path: "src/sections/", desc: "Hero, About, Skills, Projects, Education, Contact" },
+      { path: "src/components/", desc: "Navbar, ErrorBoundary, UI primitives" },
+      { path: "src/main.tsx", desc: "App root with ErrorBoundary" },
+      { path: "vite.config.ts", desc: "Vite build configuration" },
     ],
   },
   {
@@ -121,7 +122,7 @@ const projects: Project[] = [
     accent: "from-blue-500/20 to-sky-500/10",
     accentBorder: "border-blue-400/25",
     accentIcon: "text-blue-400",
-    githubUrl: "https://github.com/ashutoshgupta16966-creator/Personal_Portfolio",
+    githubUrl: "https://github.com/ashutoshgupta16966-creator/Exploratory_Data_Analysis",
     status: "Data Science / EDA",
     icon: BarChart3,
     features: [
@@ -290,7 +291,7 @@ export default function Projects() {
             Things I've Built
           </h2>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-            Real projects — chess engines, civic platforms, assessment engines, and data analytics tools. Click any card to explore code structure.
+            Real projects — chess engines, civic platforms, web apps, and data analytics pipelines. Click any card to explore code breakdown.
           </p>
         </motion.div>
 

@@ -62,17 +62,30 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
             >
-              Ashutosh<br />
-              <span className="gradient-text">Gupta</span>
+              Building the{" "}
+              <span className="gradient-text">Future</span>
+              <br />
+              <span className="text-foreground/90">with Code &amp;</span>{" "}
+              <span className="gradient-text">Data.</span>
             </motion.h1>
 
             <motion.p
-              className="text-base md:text-lg text-foreground/90 font-semibold mb-6 max-w-xl leading-relaxed"
+              className="text-base md:text-lg text-foreground/90 font-semibold mb-2 max-w-xl leading-relaxed flex items-center gap-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              B.Tech CSE Student at GL Bajaj Group of Institutions, Mathura | Python | Exploring AI/ML, Data Analytics &amp; Software Development
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block shrink-0" />
+              B.Tech CSE • GL Bajaj Group of Institutions, Mathura
+            </motion.p>
+
+            <motion.p
+              className="text-sm md:text-base text-muted-foreground max-w-xl mb-8 leading-relaxed font-medium"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+            >
+              Python • AI/ML • Data Analytics • Software Development. I turn raw data into decisions, build web experiences users love, and write clean, scalable code that ships.
             </motion.p>
 
             {/* Stat pills */}
