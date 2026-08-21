@@ -12,6 +12,7 @@ import {
   SiJavascript,
   SiReact,
   SiTailwindcss,
+  SiNodedotjs,
   SiGit,
   SiGithub,
   SiGooglecolab,
@@ -33,7 +34,7 @@ const categories = [
   },
   {
     id: "data-analytics",
-    label: "Data Analytics",
+    label: "Data Analytics (Basics)",
     icon: BarChart3,
     accent: "from-emerald-500/15 to-teal-500/5",
     border: "border-emerald-400/25",
@@ -59,6 +60,7 @@ const categories = [
       { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
       { name: "React", icon: SiReact, color: "#61DAFB" },
       { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+      { name: "Node.js", icon: SiNodedotjs, color: "#5FA04E" },
     ],
   },
   {
@@ -175,11 +177,11 @@ export default function Skills() {
               transition={{ duration: 0.25 }}
               className={`rounded-2xl border ${active.border} bg-gradient-to-br ${active.accent} p-6 min-h-[160px] flex items-center`}
             >
-              <div className="grid grid-cols-3 sm:grid-cols-5 gap-4 w-full">
+              <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 w-full">
                 {active.skills.map(({ name, icon: SkillIcon, color }) => (
                   <div
                     key={name}
-                    data-testid={`skill-item-${name.toLowerCase().replace(/[\s/]+/g, "-")}`}
+                    data-testid={`skill-item-${name.toLowerCase().replace(/[\s/.]+/g, "-")}`}
                     className="flex flex-col items-center gap-2 p-3 rounded-xl bg-background/70 border border-border/60 hover:border-primary/40 hover:bg-background hover:shadow-md transition-all cursor-default group"
                   >
                     <SkillIcon
