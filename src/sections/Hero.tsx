@@ -86,7 +86,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.35 }}
             >
               {[
-                { label: "3+ Projects", color: "text-primary border-primary/20 bg-primary/5" },
+                { label: "5+ Projects", color: "text-primary border-primary/20 bg-primary/5" },
                 { label: "5+ Certifications", color: "text-violet-400 border-violet-400/20 bg-violet-500/5" },
                 { label: "Python · React · Git", color: "text-emerald-400 border-emerald-400/20 bg-emerald-500/5" },
               ].map(({ label, color }) => (
@@ -170,7 +170,7 @@ export default function Hero() {
             <div className="flex gap-3 text-center">
               {[
                 { val: "B.Tech", sub: "CSE '29", color: "text-primary" },
-                { val: "3+", sub: "Projects", color: "text-violet-400" },
+                { val: "5+", sub: "Projects", color: "text-violet-400" },
                 { val: "5+", sub: "Certs", color: "text-emerald-400" },
               ].map(({ val, sub, color }) => (
                 <div key={sub} className="px-4 py-3 rounded-2xl border border-border/60 bg-card/60 backdrop-blur-md hover:border-primary/30 hover:bg-card/80 transition-all">

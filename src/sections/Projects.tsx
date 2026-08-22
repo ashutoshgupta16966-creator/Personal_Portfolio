@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Github, ArrowUpRight, X, ChevronRight, Gamepad2, BarChart3, Globe, Layout } from "lucide-react";
+import { Github, ExternalLink, ArrowUpRight, X, ChevronRight, Gamepad2, BarChart3, Globe, Layout, Layers } from "lucide-react";
 
 interface Project {
   id: string;
@@ -14,6 +14,7 @@ interface Project {
   accentBorder: string;
   accentIcon: string;
   githubUrl: string;
+  liveUrl?: string;
   status: string;
   icon: React.ElementType;
   features: string[];
@@ -21,6 +22,36 @@ interface Project {
 }
 
 const projects: Project[] = [
+  {
+    id: "campussync",
+    title: "CampusSync — Smart Student Workspace",
+    tagline: "Semester Workspace & Student Collaboration Hub",
+    description:
+      "One workspace for your notes, hackathon squad, and resume matching — featuring AI summarizer, campus activity feed, and teammate matcher.",
+    longDescription:
+      "CampusSync is an all-in-one smart student workspace built for semester productivity and campus team formation. It brings class notes, hackathon squad assembly, AI-driven notes summarization, live campus activity feeds, and automated skill-to-resume matching into a unified dashboard.",
+    tags: ["React", "JavaScript", "Tailwind CSS", "Node.js"],
+    accent: "from-indigo-500/20 to-cyan-500/10",
+    accentBorder: "border-indigo-400/25",
+    accentIcon: "text-indigo-400",
+    githubUrl: "https://github.com/ashutoshgupta16966-creator/Campus-Sync",
+    liveUrl: "https://campus-sync-ashy.vercel.app",
+    status: "Full-Stack / Web Application",
+    icon: Layers,
+    features: [
+      "Semester note-taking workspace & AI notes summarizer",
+      "Hackathon squad finder & teammate skill matcher",
+      "Real-time campus activity feed & announcement board",
+      "Automated resume-to-opportunity skill alignment",
+      "Responsive UI built with React, Tailwind CSS & Node.js",
+    ],
+    structure: [
+      { path: "src/App.jsx", desc: "Main student workspace shell" },
+      { path: "src/components/Feed.jsx", desc: "Campus activity & squad feed" },
+      { path: "src/services/ai.js", desc: "Notes summarizer engine" },
+      { path: "server/", desc: "Node.js backend API & collaboration handlers" },
+    ],
+  },
   {
     id: "rajachess",
     title: "RajaChess — Multiplayer Chess",
@@ -245,7 +276,7 @@ function ProjectModal({ project, onClose }: ProjectModalProps) {
               </div>
             )}
 
-            {/* Action button: Source Code ONLY */}
+            {/* Action buttons */}
             <div className="flex flex-wrap gap-3 pt-2">
               <a
                 href={project.githubUrl}
@@ -256,6 +287,17 @@ function ProjectModal({ project, onClose }: ProjectModalProps) {
                 <Github size={16} />
                 Source Code
               </a>
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold bg-secondary text-secondary-foreground border border-border hover:bg-secondary/80 hover:border-primary/30 transition-all hover:-translate-y-0.5"
+                >
+                  <ExternalLink size={16} />
+                  Live Demo
+                </a>
+              )}
             </div>
           </div>
         </motion.div>
@@ -291,7 +333,7 @@ export default function Projects() {
             Things I've Built
           </h2>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-            Real projects — chess engines, civic platforms, web apps, and data analytics pipelines. Click any card to explore code breakdown.
+            Real projects — student workspaces, chess engines, civic platforms, web apps, and data analytics pipelines. Click any card to explore details.
           </p>
         </motion.div>
 
@@ -346,18 +388,32 @@ export default function Projects() {
                   </div>
 
                   <div className="flex items-center justify-between pt-2 border-t border-border/40">
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:underline"
-                    >
-                      <Github size={14} />
-                      Source Code
-                    </a>
+                    <div className="flex items-center gap-3">
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:underline"
+                      >
+                        <Github size={14} />
+                        Source Code
+                      </a>
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:underline"
+                        >
+                          <ExternalLink size={13} />
+                          Live Demo
+                        </a>
+                      )}
+                    </div>
                     <span className="flex items-center gap-1 text-xs text-muted-foreground group-hover:text-foreground transition-colors font-medium">
-                      Code Breakdown &amp; Details
+                      Details
                       <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </span>
                   </div>
