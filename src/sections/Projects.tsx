@@ -65,6 +65,7 @@ const projects: Project[] = [
     accentBorder: "border-amber-400/25",
     accentIcon: "text-amber-400",
     githubUrl: "https://github.com/ashutoshgupta16966-creator/Multiplayer_Chess",
+    liveUrl: "https://multiplayer-chess-eta.vercel.app/",
     status: "Game Dev / Web App",
     icon: Gamepad2,
     features: [
@@ -96,6 +97,7 @@ const projects: Project[] = [
     accentBorder: "border-emerald-400/25",
     accentIcon: "text-emerald-400",
     githubUrl: "https://github.com/ashutoshgupta16966-creator/Smart_Bharat---Civic-Companion",
+    liveUrl: "https://smart-bharat-civic-companion-1.onrender.com",
     status: "Civic Tech / Web App",
     icon: Globe,
     features: [
@@ -125,6 +127,7 @@ const projects: Project[] = [
     accentBorder: "border-violet-400/25",
     accentIcon: "text-violet-400",
     githubUrl: "https://github.com/ashutoshgupta16966-creator/Personal_Portfolio",
+    liveUrl: "https://portfolio-ashutosh22.vercel.app/",
     status: "Web Development / React",
     icon: Layout,
     features: [
