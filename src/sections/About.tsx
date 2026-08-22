@@ -5,7 +5,7 @@ import { Code2, Coffee, Globe, Rocket } from "lucide-react";
 
 const highlights = [
   { icon: Code2, label: "B.Tech CSE", sub: "Computer Science & Engg." },
-  { icon: Rocket, label: "5+ Projects", sub: "Built & Deployed" },
+  { icon: Rocket, label: "3+ Projects", sub: "Built & Deployed" },
   { icon: Globe, label: "Mathura, India", sub: "Based in" },
   { icon: Coffee, label: "Open to", sub: "Opportunities" },
 ];
