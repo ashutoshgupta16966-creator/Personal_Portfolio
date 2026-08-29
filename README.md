@@ -2,8 +2,6 @@
 
 Welcome to my personal developer portfolio! This repository contains the source code for my portfolio website showcasing my journey, skills, and projects.
 
-🔗 **Live Portfolio:** - https://portfolio-ashutosh22.vercel.app/
-
 ---
 
 ### Tech Stack
