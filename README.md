@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-Welcome to my personal developer portfolio! This repository contains the source code for my portfolio website showcasing my journey, skills, and projects.
+😇Welcome to my personal developer portfolio! This repository contains the source code for my portfolio website showcasing my journey, skills, and projects.
 
 ---
 
