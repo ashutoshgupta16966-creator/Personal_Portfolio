@@ -35,7 +35,7 @@ const projects: Project[] = [
     accentBorder: "border-indigo-400/25",
     accentIcon: "text-indigo-400",
     githubUrl: "https://github.com/ashutoshgupta16966-creator/Campus-Sync",
-    liveUrl: "https://campus-sync-ashy.vercel.app",
+    liveUrl: "https://campus-sync-2d0n.onrender.com",
     status: "Full-Stack / Web Application",
     icon: Layers,
     features: [
@@ -65,7 +65,7 @@ const projects: Project[] = [
     accentBorder: "border-amber-400/25",
     accentIcon: "text-amber-400",
     githubUrl: "https://github.com/ashutoshgupta16966-creator/Multiplayer_Chess",
-    liveUrl: "https://multiplayer-chess-eta.vercel.app/",
+    liveUrl: "https://multiplayer-chess-nldn.onrender.com",
     status: "Game Dev / Web App",
     icon: Gamepad2,
     features: [
