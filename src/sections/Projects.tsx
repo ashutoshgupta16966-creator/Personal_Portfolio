@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Github, ExternalLink, ArrowUpRight, X, ChevronRight, Gamepad2, BarChart3, Globe, Layout, Layers } from "lucide-react";
+import { Github, ExternalLink, ArrowUpRight, X, ChevronRight, Gamepad2, BarChart3, Globe, Layers, HelpCircle, Stethoscope } from "lucide-react";
 
 interface Project {
   id: string;
@@ -115,33 +115,61 @@ const projects: Project[] = [
     ],
   },
   {
-    id: "portfolio",
-    title: "Personal Portfolio Website",
-    tagline: "Modern Developer Portfolio Built with React & Tailwind",
+    id: "quizfunnel",
+    title: "QuizFunnel — AI-Powered Quiz Platform",
+    tagline: "Interactive Quiz Funnels & Assessment System",
     description:
-      "Modern developer portfolio built with React, TypeScript, and Tailwind CSS featuring interactive project showcases, clean UI/UX, and responsive layout.",
+      "Interactive, AI-driven quiz creation and execution platform supporting custom quiz funnels, timers, and real-time response evaluation.",
     longDescription:
-      "A developer portfolio built from scratch to showcase real engineering projects, academic background, and technical skill sets. Features an interactive project modal viewer, glassmorphism aesthetics, responsive dark mode support, and clean TypeScript codebase.",
-    tags: ["React 18", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
+      "QuizFunnel is an interactive, AI-driven quiz creation and execution platform. It supports dynamic quiz generation, customizable funnels across difficulty levels, real-time response evaluation, countdown timers, and comprehensive performance analytics.",
+    tags: ["React", "Node.js", "Express", "AI Integration", "Tailwind CSS"],
     accent: "from-violet-500/20 to-purple-500/10",
     accentBorder: "border-violet-400/25",
     accentIcon: "text-violet-400",
-    githubUrl: "https://github.com/ashutoshgupta16966-creator/Personal_Portfolio",
-    liveUrl: "https://portfolio-ashutosh22.vercel.app/",
-    status: "Web Development / React",
-    icon: Layout,
+    githubUrl: "https://github.com/ashutoshgupta16966-creator/QuizFunnel",
+    status: "Full-Stack / AI Web App",
+    icon: HelpCircle,
     features: [
-      "React 18 + TypeScript strict build architecture",
-      "Glassmorphism dark theme with Framer Motion animations",
-      "Interactive project modal viewer with isolated code breakdown",
-      "Responsive design optimized across mobile and desktop viewports",
-      "Clean project repository integration",
+      "Customizable quiz funnels with countdown timers and transitions",
+      "AI-driven dynamic question generation and difficulty scaling",
+      "Real-time answer scoring and performance analytics breakdown",
+      "Attempt history tracking accuracy percentage and completion times",
+      "Full-stack architecture built with React, Node.js, Express & Tailwind CSS",
     ],
     structure: [
-      { path: "src/sections/", desc: "Hero, About, Skills, Projects, Education, Contact" },
-      { path: "src/components/", desc: "Navbar, ErrorBoundary, UI primitives" },
-      { path: "src/main.tsx", desc: "App root with ErrorBoundary" },
-      { path: "vite.config.ts", desc: "Vite build configuration" },
+      { path: "client/src/", desc: "Interactive quiz flow UI and state management" },
+      { path: "client/src/components/", desc: "Quiz player, timers & analytics modal" },
+      { path: "server/routes/", desc: "Express API endpoints & quiz evaluation" },
+      { path: "server/services/", desc: "AI question generation service" },
+    ],
+  },
+  {
+    id: "medical-assistant",
+    title: "Medical Assistant — AI Healthcare Companion",
+    tagline: "Gemini Vision Prescription & Health Scanner",
+    description:
+      "Intelligent medical assistant leveraging AI and Gemini vision models to analyze medical queries, image inputs, and provide interactive health insights with speech support.",
+    longDescription:
+      "Medical Assistant turns medicine strips, prescription labels, and lab reports into clear, plain-language guidance. Powered by Google Gemini vision models and Express, it features automated expiry-risk detection, bilingual (English/Hindi) insights, interactive health symptom consultation, and speech support.",
+    tags: ["React", "TypeScript", "Gemini AI", "Express", "Node.js"],
+    accent: "from-rose-500/20 to-red-500/10",
+    accentBorder: "border-rose-400/25",
+    accentIcon: "text-rose-400",
+    githubUrl: "https://github.com/ashutoshgupta16966-creator/Medical_Assistant",
+    status: "Healthcare AI / Web App",
+    icon: Stethoscope,
+    features: [
+      "Vision analysis of medicine strips and lab reports using Gemini Vision",
+      "Automated expiry-risk classification with color-coded safety tiers",
+      "Bilingual health guidance with English and Hindi language support",
+      "Interactive health assistant chat with clinical red-flag safety disclaimers",
+      "Voice/speech support and modern responsive interface built with React & Tailwind CSS",
+    ],
+    structure: [
+      { path: "artifacts/medical-assistant/", desc: "React + TypeScript frontend application" },
+      { path: "artifacts/api-server/", desc: "Express 5 backend with Gemini Vision routes" },
+      { path: "lib/api-spec/", desc: "OpenAPI specification source of truth" },
+      { path: "lib/api-zod/", desc: "Zod schemas for runtime request validation" },
     ],
   },
   {
