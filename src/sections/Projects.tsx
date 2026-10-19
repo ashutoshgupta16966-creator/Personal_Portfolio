@@ -127,6 +127,7 @@ const projects: Project[] = [
     accentBorder: "border-violet-400/25",
     accentIcon: "text-violet-400",
     githubUrl: "https://github.com/ashutoshgupta16966-creator/QuizFunnel",
+    liveUrl: "https://quiz-funnel-6xzg.onrender.com/",
     status: "Full-Stack / AI Web App",
     icon: HelpCircle,
     features: [
@@ -156,6 +157,7 @@ const projects: Project[] = [
     accentBorder: "border-rose-400/25",
     accentIcon: "text-rose-400",
     githubUrl: "https://github.com/ashutoshgupta16966-creator/Medical_Assistant",
+    liveUrl: "https://medical-assistant-lfky.onrender.com",
     status: "Healthcare AI / Web App",
     icon: Stethoscope,
     features: [
